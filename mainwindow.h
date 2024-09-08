@@ -25,12 +25,13 @@ public:
 private slots:
     void on_pushButton_setDrive_clicked();
     QString calculateChecksum(const QString &path);
-    QStringList readChecksumsFromFile(const QString &filePath);
-    void saveDriveInfo(const QString &path, const QString &checksum);
+    QMap<QString, int> readChecksumsFromFile(const QString &filePath);
+    void saveDriveInfo(const QString &path, const QString &checksum, int id);
     void displayDriveInfo(const QString &path);
 
 private:
     Ui::MainWindow *ui;
+    int checksumCounter = 0;
 };
 
 #endif // MAINWINDOW_H
